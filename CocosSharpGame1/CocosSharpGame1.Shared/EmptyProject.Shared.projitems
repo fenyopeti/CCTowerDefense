@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>61ee4bcb-287f-4a80-8ed9-ffd07dd3fed4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CocosSharpGame1</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AppDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\GameEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\EntryField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\ExitField.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\Field.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\MapEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\Wall.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MovingObjects\EasyTank.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MovingObjects\MovingObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\Bullet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\BulletBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\BulletFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\ShootingObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\Tower.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\Gamer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\Store.cs" />
+  </ItemGroup>
+</Project>
