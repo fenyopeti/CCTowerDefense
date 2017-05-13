@@ -4,7 +4,9 @@ using CCTowerDefense.Game.GameObjects.ShootingObjects;
 using CocosSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+
 
 namespace CCTowerDefense.Game
 {
@@ -33,7 +35,7 @@ namespace CCTowerDefense.Game
         private Map()
         {
             tanks = new List<MovingObject>();
-
+            towers = new List<ShootingObject>();
             
             GameEventHandler.Self.TankCreated += HandleTankCreated;
             GameEventHandler.Self.TankDead += HandleTankRemove;
@@ -87,9 +89,10 @@ namespace CCTowerDefense.Game
             {
                 for(int j  = 0; j < Cols; j++)
                 {
-                    if(gameMap[j, i].BoundingBox.ContainsPoint(touch.Location))
+                    if(gameMap[j, i].BoundingBox.ContainsPoint(new CCPoint(touch.Location.X, touch.Location.Y-200f)))
                     {
                         gameMap[j, i].OnTouch(touch);
+                        Debug.WriteLine($"x: {j}, y: {i}");
                     }
                 }
             }
@@ -163,8 +166,6 @@ namespace CCTowerDefense.Game
         private void HandleExplosion(MovingObject obj)
         {
             AddChild(new CCParticleExplosion(obj.Position));
-            // CCAudioEngine.SharedEngine.PlayEffect(filename: "explosion");
-
         }
 
 

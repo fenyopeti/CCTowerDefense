@@ -9,7 +9,8 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
     {
         public Tower(int x, int y) : base(x, y)
         {
-            sprite = new CCSprite();
+            sprite = new CCSprite("etower.png");
+            Value = 60;
         }
     }
 }

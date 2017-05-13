@@ -9,8 +9,11 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
 {
     public class Wall : MapEntity
     {
+        public bool HasTower { get; set; }
+
         public Wall(int x, int y) : base(x, y)
         {
+            HasTower = false;
             sprite = new CocosSharp.CCSprite("wall.png");
         }
 
@@ -21,8 +24,11 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
 
         public override void OnTouch(CCTouch touch)
         {
-
-            GameEventHandler.Self.CreateTower(x, y);
+            if (!HasTower)
+            {
+                GameEventHandler.Self.CreateTower(x, y);
+                HasTower = true;
+            }
         }
 
 

@@ -10,7 +10,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
     {
         public Bullet(MovingObject target, int power, float v) : base(target, power, v)
         {
-            sprite = new CCSprite();
+            sprite = new CCSprite("ebullet.png");
         }
     }
 }

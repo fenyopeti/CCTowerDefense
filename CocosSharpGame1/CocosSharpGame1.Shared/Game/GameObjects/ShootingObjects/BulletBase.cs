@@ -16,6 +16,8 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
             this.target = target;
             this.power = power;
 
+
+
             Schedule(move);
         }
 
@@ -23,14 +25,31 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
         {
             base.AddedToScene();
 
-            ContentSize = sprite.ContentSize = new CCSize(25f, 25f);
+            ContentSize = sprite.ContentSize = new CCSize(153.6f, 153.6f);
 
             AddChild(sprite);
         }
 
         private void move(float obj)
         {
+            if(target == null)
+            {
+                RemoveFromParent();
+                return;
+            }
 
+
+
+            // TODO moving
+
+
+
+            if (this.BoundingBox.IntersectsRect(target.BoundingBox))
+            {
+                target.getShot(power);
+                RemoveFromParent();
+                return;
+            }
         }
     }
 }

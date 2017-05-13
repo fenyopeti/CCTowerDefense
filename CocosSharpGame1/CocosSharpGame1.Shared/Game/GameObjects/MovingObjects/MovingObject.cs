@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CocosSharp;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -39,11 +40,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         {
                             x = x + 1;
                             dir = Direction.RIGHT;
+                            sprite.Rotation = 90f;
                         }
                         else
                         {
                             x = x - 1;
                             dir = Direction.LEFT;
+                            sprite.Rotation = -90f;
                         }
                     }
 
@@ -60,11 +63,16 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         {
                             y = y + 1;
                             dir = Direction.UP;
+
+                            sprite.Rotation = 0f;
+
                         }
                         else
                         {
                             y = y - 1;
                             dir = Direction.DOWN;
+                            sprite.Rotation = 180f;
+
                         }
                     }
                     break;
@@ -79,11 +87,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         else if (Map.Self.Get(x + 1, y).acceptTank(this))
                         {
                             x = x + 1;
+                            sprite.Rotation = 90f;
                             dir = Direction.RIGHT;
                         }
                         else
                         {
                             x = x - 1;
+                            sprite.Rotation = -90f;
                             dir = Direction.LEFT;
                         }
                     }
@@ -100,11 +110,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         else if (Map.Self.Get(x, y + 1).acceptTank(this))
                         {
                             y = y + 1;
+                            sprite.Rotation = 0f;
                             dir = Direction.UP;
                         }
                         else
                         {
                             y = y - 1;
+                            sprite.Rotation = 180f;
                             dir = Direction.DOWN;
                         }
                     }

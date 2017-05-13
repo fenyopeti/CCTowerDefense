@@ -40,9 +40,11 @@ namespace CCTowerDefense.Game
         }
 
         private void HandleTowerBought(ShootingObject obj)
-        {/*
-            if (Money >= amount)
-                Money -= amount;
-        */}
+        {
+            if(Money >= obj.Value)
+            {
+                Money -= obj.Value;
+            }
+        }
     }
 }
