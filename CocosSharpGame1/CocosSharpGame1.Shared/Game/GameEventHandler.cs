@@ -9,6 +9,9 @@ namespace CCTowerDefense.Game
 {
     class GameEventHandler
     {
+
+
+
         static Lazy<GameEventHandler> self = new Lazy<GameEventHandler>(() => new GameEventHandler());
 
         // simple singleton implementation
@@ -24,7 +27,6 @@ namespace CCTowerDefense.Game
         public event Action<MovingObject> TankArrived;
         public event Action<MovingObject> TankDead;
 
-       // public event Action<int> TowerBought;
         public event Action<ShootingObject> TowerCreated;
         public event Action<BulletBase> BulletCreated;
 
@@ -36,9 +38,10 @@ namespace CCTowerDefense.Game
 
         }
 
-        public void CreateTank(int x, int y)
+        public void CreateTank(int x, int y, Direction dir)
         {
             MovingObject newTank = new EasyTank(x, y);
+            newTank.Dir = dir;
             TankCreated?.Invoke(newTank);
         }
 
@@ -55,7 +58,7 @@ namespace CCTowerDefense.Game
 
         public void CreateTower(int x, int y)
         {
-            ShootingObject newTower = new Tower(x, y);
+            ShootingObject newTower = new EasyTower(x, y);
             TowerCreated?.Invoke(newTower);
         }
 
@@ -75,6 +78,7 @@ namespace CCTowerDefense.Game
         {
             GameIsOver?.Invoke();
         }
+
 
     }
 }

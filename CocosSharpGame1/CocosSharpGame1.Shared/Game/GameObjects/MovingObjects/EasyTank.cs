@@ -10,6 +10,8 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
         public EasyTank(int x, int y) : base(x, y)
         {
             sprite = new CCSprite("swtank.png");
+            Value = 30;
+            health = 80;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CocosSharp;
+﻿using CCTowerDefense.Game.GameObjects.MovingObjects;
+using CocosSharp;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,26 +11,36 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
         protected int power;
         protected float range;
 
-        public int Value { get; protected set; }
+        private MovingObject target;
 
-        public ShootingObject(int x, int y) : base(x, y)
+        public static int Value { get; protected set; }
+
+        public ShootingObject(int x, int y, bool isActive = true) : base(x, y)
         {
-            power = 30;
-            range = 200f;
+            Schedule(rotation);
             Schedule(shoot, interval: 3f);
         }
 
-          public void shoot(float unused)
+        public void rotation(float unused)
         {
-            var tankToBeShot = Map.Self.getTankInRange(this, range);
+            target = Map.Self.getTankInRange(this, range);
 
-            if(tankToBeShot != null)
+            if (target != null)
             {
-                GameEventHandler.Self.CreateBullet(this.Position, tankToBeShot, power);
 
-                Rotation = (Position - tankToBeShot.Position).Angle * 57.29577f;
+                var normVekt = (target.Position - this.Position) / ((target.Position - this.Position).Length);
+                Rotation = -normVekt.Angle * 57f + 90f;
             }
+            else
+            {
+                Rotation = 0;
+            }
+        }
 
+        public void shoot(float unused)
+        {
+            if (target != null)
+                GameEventHandler.Self.CreateBullet(this.Position, target, power);
         }
     }
 }

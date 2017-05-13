@@ -25,26 +25,32 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
         {
             base.AddedToScene();
 
-            ContentSize = sprite.ContentSize = new CCSize(153.6f, 153.6f);
+            ContentSize = new CCSize(100f, 100f);
+            sprite.ContentSize = new CCSize(153.6f, 153.6f);
 
             AddChild(sprite);
         }
 
-        private void move(float obj)
+        private void move(float t)
         {
-            if(target == null)
+            if (target == null || target.isDead)
             {
                 RemoveFromParent();
+                Cleanup();
                 return;
             }
 
 
+            t *= velocity;
 
-            // TODO moving
+            var normVekt = (target.Position - this.Position) / ((target.Position - this.Position).Length);
 
+            PositionX += normVekt.X * t;
+            PositionY += normVekt.Y * t;
 
+            Rotation = -normVekt.Angle * 57f + 90f;
 
-            if (this.BoundingBox.IntersectsRect(target.BoundingBox))
+            if (this.BoundingBox.IntersectsRect(new CCRect(target.Position.X, target.Position.Y, 10f, 10f)))
             {
                 target.getShot(power);
                 RemoveFromParent();

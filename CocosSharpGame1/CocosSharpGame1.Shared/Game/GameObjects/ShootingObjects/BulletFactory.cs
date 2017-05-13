@@ -50,8 +50,6 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
         {
             var bullet = new Bullet(target, power, velocity);
             bullet.Position = pos;
-            
-
             return bullet;
         }
 

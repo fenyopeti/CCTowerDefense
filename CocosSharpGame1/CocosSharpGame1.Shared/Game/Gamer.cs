@@ -8,6 +8,18 @@ namespace CCTowerDefense.Game
 {
     class Gamer
     {
+        static Lazy<Gamer> self = new Lazy<Gamer>(() => new Gamer());
+
+        // simple singleton implementation
+        public static Gamer Self
+        {
+            get
+            {
+                return self.Value;
+            }
+        }
+
+
         public int Lifes { get; private set; }
         public int Money { get; private set; }
         public int Score { get; private set; }
@@ -15,7 +27,7 @@ namespace CCTowerDefense.Game
         public Gamer()
         {
             Money = 100;
-            Lifes = 15;
+            Lifes = 10;
             Score = 0;
 
             GameEventHandler.Self.TankArrived += HandleTankArrived;
@@ -41,9 +53,9 @@ namespace CCTowerDefense.Game
 
         private void HandleTowerBought(ShootingObject obj)
         {
-            if(Money >= obj.Value)
+            if(Money >= ShootingObject.Value)
             {
-                Money -= obj.Value;
+                Money -= ShootingObject.Value;
             }
         }
     }

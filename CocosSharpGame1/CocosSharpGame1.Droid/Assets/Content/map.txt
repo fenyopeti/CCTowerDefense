@@ -1,1 +1,9 @@
-ide most beirok valamit akkor azt latnom kell az alkalmazasbol
+7 7
+R
+W W W W W W W
+I F F F F F W
+W W W W W F W
+W F F F F F W
+W F W W W W W
+W F F F F F O
+W W W W W W W

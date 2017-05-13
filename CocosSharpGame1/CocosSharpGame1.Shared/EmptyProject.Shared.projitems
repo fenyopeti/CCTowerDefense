@@ -24,9 +24,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\BulletBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\BulletFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\ShootingObject.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\Tower.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\EasyTower.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\Gamer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\Map.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Game\Store.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)NewFolder\" />
   </ItemGroup>
 </Project>

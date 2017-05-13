@@ -35,6 +35,7 @@ namespace CocosSharpGame1.Shared
             var scene = new CCScene(mainWindow);
             var introLayer = new GameLayer();
 
+
             scene.AddChild(introLayer);
 
             mainWindow.RunWithScene(scene);

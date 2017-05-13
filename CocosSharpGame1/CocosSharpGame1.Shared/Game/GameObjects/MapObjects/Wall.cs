@@ -24,7 +24,7 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
 
         public override void OnTouch(CCTouch touch)
         {
-            if (!HasTower)
+            if (!HasTower && Gamer.Self.Money >= EasyTower.Value)
             {
                 GameEventHandler.Self.CreateTower(x, y);
                 HasTower = true;

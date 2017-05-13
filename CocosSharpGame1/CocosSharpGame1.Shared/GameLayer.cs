@@ -13,30 +13,31 @@ namespace CocosSharpGame1.Shared
 {
     public class GameLayer : CCLayerColor
     {
-
-        Gamer gamer;
-
         CCLabel label;
         Map map;
-        Store store;
-
+        Gamer gamer;
         CCMusicPlayer backgroungMusic;
-        public GameLayer() : base(CCColor4B.Gray)
+        public GameLayer() : base(new CCColor4B(73, 231, 108))
         {
 
-            gamer = new Gamer();
+            gamer = Gamer.Self;
             map = Map.Self;
-            store = new Store();
             label = new CCLabel($"Life: {gamer.Lifes}  Money: {gamer.Money}", "fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
             backgroungMusic = new CCMusicPlayer();
 
             AddChild(label);
             AddChild(map);
-            AddChild(store);
 
             GameEventHandler.Self.TankArrived += HandleLabelChanged;
             GameEventHandler.Self.TankDead += HandleLabelChanged;
             GameEventHandler.Self.TowerCreated += HandleLabelChanged;
+
+            GameEventHandler.Self.GameIsOver += HandleGameOver;
+        }
+
+        private void HandleGameOver()
+        {
+            throw new NotImplementedException();
         }
 
         private void HandleLabelChanged(MovingObject obj)
@@ -58,7 +59,7 @@ namespace CocosSharpGame1.Shared
             backgroungMusic.Open("droidsong.mp3", 1);
 
             label.PositionX = bounds.Center.X;
-            label.PositionY = bounds.MaxY - 25;
+            label.PositionY = bounds.MaxY - 40;
 
             backgroungMusic.Play(true);
             // Register for touch events
@@ -67,6 +68,8 @@ namespace CocosSharpGame1.Shared
             AddEventListener(touchListener, this);
         }
 
+        
+        
         void OnTouchesEnded(List<CCTouch> touches, CCEvent touchEvent)
         {
             if (touches.Count > 0)

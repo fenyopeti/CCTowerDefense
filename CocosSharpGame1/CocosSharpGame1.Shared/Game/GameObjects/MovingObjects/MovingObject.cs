@@ -7,25 +7,25 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
 {
     public abstract class MovingObject : GameEntity
     {
-        protected Direction dir;
+        public Direction Dir { get; set; }
         protected int health;
+        internal bool isDead = false;
 
-        public int Value { get; private set; }
+        public int Value { get; protected set; }
 
         public MovingObject(int x, int y) : base(x, y)
         {
             this.Schedule(move);
-            Value = 30;
-        }
 
+        }
 
 
         public void move(float t)
         {
-            float velocity = 50;
+            float velocity = 70;
             t *= velocity;
 
-            switch (dir)
+            switch (Dir)
             {
                 case Direction.UP:
                     this.PositionY += t;
@@ -39,13 +39,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         else if (Map.Self.Get(x + 1, y).acceptTank(this))
                         {
                             x = x + 1;
-                            dir = Direction.RIGHT;
+                            Dir = Direction.RIGHT;
                             sprite.Rotation = 90f;
                         }
                         else
                         {
                             x = x - 1;
-                            dir = Direction.LEFT;
+                            Dir = Direction.LEFT;
                             sprite.Rotation = -90f;
                         }
                     }
@@ -62,7 +62,7 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         else if (Map.Self.Get(x, y + 1).acceptTank(this))
                         {
                             y = y + 1;
-                            dir = Direction.UP;
+                            Dir = Direction.UP;
 
                             sprite.Rotation = 0f;
 
@@ -70,7 +70,7 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         else
                         {
                             y = y - 1;
-                            dir = Direction.DOWN;
+                            Dir = Direction.DOWN;
                             sprite.Rotation = 180f;
 
                         }
@@ -88,13 +88,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         {
                             x = x + 1;
                             sprite.Rotation = 90f;
-                            dir = Direction.RIGHT;
+                            Dir = Direction.RIGHT;
                         }
                         else
                         {
                             x = x - 1;
                             sprite.Rotation = -90f;
-                            dir = Direction.LEFT;
+                            Dir = Direction.LEFT;
                         }
                     }
 
@@ -111,13 +111,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                         {
                             y = y + 1;
                             sprite.Rotation = 0f;
-                            dir = Direction.UP;
+                            Dir = Direction.UP;
                         }
                         else
                         {
                             y = y - 1;
                             sprite.Rotation = 180f;
-                            dir = Direction.DOWN;
+                            Dir = Direction.DOWN;
                         }
                     }
 
@@ -136,7 +136,11 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
             health -= power;
 
             if (health <= 0)
+            {
+                isDead = true;
                 GameEventHandler.Self.TankDestroy(this);
+
+            }
         }
 
     }

@@ -23,10 +23,12 @@ namespace CCTowerDefense.Game.GameObjects
         {
             base.AddedToScene();
 
-            ContentSize = sprite.ContentSize = new CCSize(153.6f, 153.6f);
+            var Size = 768f / Map.Self.Cols;
 
-            PositionX = x * 153.6f + 76.8f;
-            PositionY = y * 153.6f + 76.8f;
+            ContentSize = sprite.ContentSize = new CCSize(Size, Size);
+
+            PositionX = x * Size + Size / 2;
+            PositionY = y * Size + Size / 2;
 
             AddChild(sprite);
         }
