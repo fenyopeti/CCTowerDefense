@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using CocosSharp;
 
+
 namespace CocosSharpGame1.Shared
 {
     public class AppDelegate : CCApplicationDelegate
@@ -13,6 +14,7 @@ namespace CocosSharpGame1.Shared
 
             var desiredWidth = 768.0f;
             var desiredHeight = 1024.0f;
+            
 
             // This will set the world bounds to be (0,0, w, h)
             // CCSceneResolutionPolicy.ShowAll will ensure that the aspect ratio is preserved
@@ -32,11 +34,12 @@ namespace CocosSharpGame1.Shared
                 CCSprite.DefaultTexelToContentSizeRatio = 1.0f;
             }
 
+
             var scene = new CCScene(mainWindow);
-            var introLayer = new GameLayer();
+            //var gameLayer = new GameLayer();
+            var mainLayer = new MainLayer();
 
-
-            scene.AddChild(introLayer);
+            scene.AddChild(mainLayer);
 
             mainWindow.RunWithScene(scene);
         }

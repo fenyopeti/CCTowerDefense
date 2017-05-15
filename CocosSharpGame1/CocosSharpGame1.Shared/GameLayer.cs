@@ -19,6 +19,8 @@ namespace CocosSharpGame1.Shared
         Map map;
         Gamer gamer;
         CCMusicPlayer backgroungMusic;
+
+
         public GameLayer() : base(new CCColor4B(73, 231, 108))
         {
 
@@ -39,9 +41,11 @@ namespace CocosSharpGame1.Shared
 
         private void HandleGameOver()
         {
-           // throw new NotImplementedException();
+            Window.DefaultDirector.ReplaceScene(MainLayer.GameScene(Window));
+            map.Dispose();
+            gamer.Reset();
+            this.RemoveFromParent();
         }
-
         private void HandleLabelChanged(MovingObject obj)
         {
             label.Text = $"Life: {gamer.Lifes}  Money: {gamer.Money}";
@@ -74,24 +78,32 @@ namespace CocosSharpGame1.Shared
                 {
                     if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                     {
-                        //TODO exit.
-
+                        HandleGameOver();
                     }
                 }
 
             );
         }
 
-        
-        
+        internal static CCScene GameScene(CCWindow window)
+        {
+            var scene = new CCScene(window);
+            var layer = new GameLayer();
+
+            scene.AddChild(layer);
+
+            return scene;
+        }
+
         void OnTouchesEnded(List<CCTouch> touches, CCEvent touchEvent)
         {
             if (touches.Count > 0)
             {
-                if (map.BoundingBox.ContainsPoint(touches[0].Location)){
+                if (map.BoundingBox.ContainsPoint(touches[0].Location))
+                {
                     map.OnTouch(touches[0]);
                 }
-                
+
             }
         }
     }

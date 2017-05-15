@@ -58,5 +58,10 @@ namespace CCTowerDefense.Game
                 Money -= ShootingObject.Value;
             }
         }
+
+        internal void Reset()
+        {
+            self = new Lazy<Gamer>(() => new Gamer());
+        }
     }
 }

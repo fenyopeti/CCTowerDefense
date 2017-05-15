@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\ShootingObjects\EasyTower.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\Gamer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)NewFolder\" />

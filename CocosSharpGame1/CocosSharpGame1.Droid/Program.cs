@@ -39,7 +39,13 @@ namespace CocosSharpGame1.Droid
 
 			application.StartGame();
 
-        }        
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            Finish();
+        }
     }
 
 
