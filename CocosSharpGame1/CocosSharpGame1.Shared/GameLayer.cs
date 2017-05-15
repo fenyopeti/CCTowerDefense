@@ -8,6 +8,8 @@ using CCTowerDefense.Game;
 using CCTowerDefense.Game.GameObjects.MovingObjects;
 using CCTowerDefense.Game.GameObjects.ShootingObjects;
 using CocosDenshion;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
 
 namespace CocosSharpGame1.Shared
 {
@@ -37,7 +39,7 @@ namespace CocosSharpGame1.Shared
 
         private void HandleGameOver()
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
 
         private void HandleLabelChanged(MovingObject obj)
@@ -59,13 +61,25 @@ namespace CocosSharpGame1.Shared
             backgroungMusic.Open("droidsong.mp3", 1);
 
             label.PositionX = bounds.Center.X;
-            label.PositionY = bounds.MaxY - 40;
+            label.PositionY = bounds.MaxY - 40f;
 
             backgroungMusic.Play(true);
             // Register for touch events
             var touchListener = new CCEventListenerTouchAllAtOnce();
             touchListener.OnTouchesEnded = OnTouchesEnded;
             AddEventListener(touchListener, this);
+
+            Schedule(
+                (dt) =>
+                {
+                    if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                    {
+                        //TODO exit.
+
+                    }
+                }
+
+            );
         }
 
         

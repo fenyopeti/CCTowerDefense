@@ -106,7 +106,17 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\droidsong.mp3" />
+    <Content Include="Content\ebullet.png" />
+    <Content Include="Content\etank.png" />
+    <Content Include="Content\etower.png" />
+    <Content Include="Content\field.png" />
     <Content Include="Content\fonts\MarkerFelt-22.xnb" />
+    <Content Include="Content\infield.png" />
+    <Content Include="Content\map.txt" />
+    <Content Include="Content\outfield.png" />
+    <Content Include="Content\swtank.png" />
+    <Content Include="Content\wall.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.scale-240.png" />
