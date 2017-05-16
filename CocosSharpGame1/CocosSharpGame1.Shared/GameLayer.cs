@@ -23,7 +23,7 @@ namespace CocosSharpGame1.Shared
 
         public GameLayer() : base(new CCColor4B(73, 231, 108))
         {
-
+            
             gamer = Gamer.Self;
             map = Map.Self;
             label = new CCLabel($"Life: {gamer.Lifes}  Money: {gamer.Money}", "fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);

@@ -40,7 +40,7 @@ namespace CocosSharpGame1.Shared
                 {
                     if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                     {
-                        this.Application.ExitGame()
+                        this.Application.ExitGame();
                     }
                 }
 

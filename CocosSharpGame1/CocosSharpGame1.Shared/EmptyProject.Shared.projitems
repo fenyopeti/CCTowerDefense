@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameLayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameEventHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\GameEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\IMoving.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\EntryField.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\ExitField.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\GameObjects\MapObjects\Field.cs" />
@@ -28,8 +29,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Game\Gamer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainLayer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)NewFolder\" />
   </ItemGroup>
 </Project>

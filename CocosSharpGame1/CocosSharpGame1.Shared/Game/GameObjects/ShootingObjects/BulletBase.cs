@@ -3,7 +3,7 @@ using CocosSharp;
 
 namespace CCTowerDefense.Game.GameObjects.ShootingObjects
 {
-    public class BulletBase : CCNode
+    public class BulletBase : CCNode, IMoving
     {
         private float velocity;
         private int power;
@@ -31,7 +31,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
             AddChild(sprite);
         }
 
-        private void move(float t)
+        public void move(float t)
         {
             if (target == null || target.isDead)
             {

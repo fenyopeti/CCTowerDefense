@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CCTowerDefense.Game.GameObjects.MovingObjects
 {
-    public abstract class MovingObject : GameEntity
+    public abstract class MovingObject : GameEntity, IMoving
     {
         public Direction Dir { get; set; }
         protected int health;

@@ -10,8 +10,6 @@ namespace CCTowerDefense.Game.GameObjects
         protected CCSprite sprite;
         protected int x, y;
 
-        public float Width { get; set; }
-        public float Height { get; set; }
 
         public GameEntity(int x, int y) : base()
         {

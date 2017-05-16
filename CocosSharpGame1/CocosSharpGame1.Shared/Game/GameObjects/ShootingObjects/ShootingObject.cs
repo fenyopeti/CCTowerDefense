@@ -21,7 +21,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
             Schedule(shoot, interval: 3f);
         }
 
-        public void rotation(float unused)
+        private void rotation(float unused)
         {
             target = Map.Self.getTankInRange(this, range);
 
@@ -37,7 +37,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
             }
         }
 
-        public void shoot(float unused)
+        private void shoot(float unused)
         {
             if (target != null)
                 GameEventHandler.Self.CreateBullet(this.Position, target, power);
