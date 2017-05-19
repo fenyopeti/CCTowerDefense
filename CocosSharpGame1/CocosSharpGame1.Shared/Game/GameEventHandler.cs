@@ -30,17 +30,18 @@ namespace CCTowerDefense.Game
         public event Action<ShootingObject> TowerCreated;
         public event Action<BulletBase> BulletCreated;
 
-
         public event Action GameIsOver;
+
+        public event Action<CCTouch, Map> TouchScreen;
 
         private GameEventHandler()
         {
 
         }
 
-        public void CreateTank(int x, int y, Direction dir)
+        public void CreateTank(int x, int y, Direction dir, Map map)
         {
-            MovingObject newTank = new EasyTank(x, y);
+            MovingObject newTank = new EasyTank(x, y, map);
             newTank.Dir = dir;
             TankCreated?.Invoke(newTank);
         }
@@ -56,17 +57,21 @@ namespace CCTowerDefense.Game
             TankDead?.Invoke(tank);
         }
 
-        public void CreateTower(int x, int y)
+        public void CreateTower(int x, int y, Map map)
         {
-            ShootingObject newTower = new EasyTower(x, y);
+            ShootingObject newTower = new EasyTower(x, y, map);
             TowerCreated?.Invoke(newTower);
         }
 
+        public void isTouched(CCTouch touch, Map map)
+        {
+            TouchScreen?.Invoke(touch, map);
+        }
 
-        public void CreateBullet(CCPoint position, MovingObject tankToBeShot, int power)
+        public void CreateBullet(CCPoint position, MovingObject target, int power)
         {
             var newBullet = (new BulletFactory()).Position(position)
-                                                 .Target(tankToBeShot)
+                                                 .Target(target)
                                                  .Power(power)
                                                  .Velocity(200f)
                                                  .Create();

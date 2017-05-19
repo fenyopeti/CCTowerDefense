@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CocosSharpGame1.Shared.AppDelegate" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAwAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\AppDelegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CocosSharpGame1.Shared.GameLayer" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAgAAAAAABAABAAAAAAAEIAAACAAAAACAABAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\GameLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CocosSharpGame1.Shared.MainLayer" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAABAABAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\MainLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameEventHandler">
+    <Position X="8.5" Y="4.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AACAgAAAAAAAgAEAAAQxAAIEAAAAAABRAABQAgAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.Gamer" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>CAAQAAAAAAAAAAQAAAAAAAAAAAAAAAAGAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\Gamer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.Map" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>gAAQEAgAABAAAEBAAAAAAIAAAAAIAAhAAACAAAIAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.GameEntity" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\GameEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MovingObjects.EasyTank" Collapsed="true">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MovingObjects\EasyTank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MovingObjects.MovingObject" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIACgAAAAAAAAABAAAAAAAAAgAAAAAAg=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MovingObjects\MovingObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MapObjects.EntryField" Collapsed="true">
+    <Position X="4.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MapObjects\EntryField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MapObjects.ExitField" Collapsed="true">
+    <Position X="6.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MapObjects\ExitField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MapObjects.Field" Collapsed="true">
+    <Position X="5.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MapObjects\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MapObjects.MapEntity" Collapsed="true">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MapObjects\MapEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.MapObjects.Wall" Collapsed="true">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAIAAAAAAgAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MapObjects\Wall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.ShootingObjects.Bullet" Collapsed="true">
+    <Position X="1" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\ShootingObjects\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.ShootingObjects.BulletBase" Collapsed="true">
+    <Position X="1" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAACAIAAAAAAAABEAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\ShootingObjects\BulletBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.ShootingObjects.BulletFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgIAAAAKAAAAEAAEABAAQAAAAEAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\ShootingObjects\BulletFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.ShootingObjects.EasyTower" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\ShootingObjects\EasyTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCTowerDefense.Game.GameObjects.ShootingObjects.ShootingObject" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAMAACAAAAAIACgAAAAAAEAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\ShootingObjects\ShootingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CocosSharpGame1.Droid.Program" Collapsed="true">
+    <Position X="21.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CocosSharpGame1.Droid.Resource" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CocosSharp.CCLayerColor" Collapsed="true">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CCTowerDefense.Game.GameObjects.MovingObjects.IMoving" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\IMoving.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CCTowerDefense.Game.GameObjects.ShootingObjects.IBulletFactory" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAACAAAAAAAEABAAAAAAAEAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\ShootingObjects\BulletFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CCTowerDefense.Game.GameObjects.MovingObjects.Direction" Collapsed="true">
+    <Position X="2.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>F:\BME\6th\onlab\CocosSharpGame1\CocosSharpGame1\CocosSharpGame1.Shared\Game\GameObjects\MovingObjects\MovingObject.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

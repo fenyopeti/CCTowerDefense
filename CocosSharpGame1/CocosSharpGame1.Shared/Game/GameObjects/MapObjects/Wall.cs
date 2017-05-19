@@ -15,6 +15,8 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
         {
             HasTower = false;
             sprite = new CocosSharp.CCSprite("wall.png");
+
+            GameEventHandler.Self.TouchScreen += OnTouch;
         }
 
         public override bool acceptTank(MovingObject tank)
@@ -22,12 +24,19 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
             return false;
         }
 
-        public override void OnTouch(CCTouch touch)
+        public void OnTouch(CCTouch touch, Map map)
         {
-            if (!HasTower && Gamer.Self.Money >= EasyTower.Value)
+            if (BoundingBox.ContainsPoint(new CCPoint(touch.Location.X, touch.Location.Y - 150f)))
             {
-                GameEventHandler.Self.CreateTower(x, y);
-                HasTower = true;
+                if (!HasTower/* && Gamer.Money >= EasyTower.Value*/)
+                {
+                    GameEventHandler.Self.CreateTower(x, y, map);
+                    HasTower = true;
+                }
+                else
+                {
+                    //   map.GetTower(x, y).Upgrade();
+                }
             }
         }
 

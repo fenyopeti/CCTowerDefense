@@ -23,9 +23,9 @@ namespace CocosSharpGame1.Shared
 
         public GameLayer() : base(new CCColor4B(73, 231, 108))
         {
-            
-            gamer = Gamer.Self;
-            map = Map.Self;
+
+            gamer = new Gamer();
+            map = new Map();
             label = new CCLabel($"Life: {gamer.Lifes}  Money: {gamer.Money}", "fonts/MarkerFelt", 22, CCLabelFormat.SpriteFont);
             backgroungMusic = new CCMusicPlayer();
 
@@ -39,12 +39,14 @@ namespace CocosSharpGame1.Shared
             GameEventHandler.Self.GameIsOver += HandleGameOver;
         }
 
-        private void HandleGameOver()
+        private void HandleGameOver() //asdfasdf
         {
+
             Window.DefaultDirector.ReplaceScene(MainLayer.GameScene(Window));
-            map.Dispose();
-            gamer.Reset();
+            backgroungMusic.Stop();
             this.RemoveFromParent();
+     //       map.Dispose();
+          //  this.RemoveFromParent();
         }
         private void HandleLabelChanged(MovingObject obj)
         {
@@ -73,15 +75,13 @@ namespace CocosSharpGame1.Shared
             touchListener.OnTouchesEnded = OnTouchesEnded;
             AddEventListener(touchListener, this);
 
-            Schedule(
-                (dt) =>
+            Schedule((dt) =>
                 {
                     if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                     {
                         HandleGameOver();
                     }
                 }
-
             );
         }
 
@@ -99,10 +99,10 @@ namespace CocosSharpGame1.Shared
         {
             if (touches.Count > 0)
             {
-                if (map.BoundingBox.ContainsPoint(touches[0].Location))
-                {
-                    map.OnTouch(touches[0]);
-                }
+
+                if (gamer.Money >= 70)
+                    GameEventHandler.Self.isTouched(touches[0], map);
+                
 
             }
         }

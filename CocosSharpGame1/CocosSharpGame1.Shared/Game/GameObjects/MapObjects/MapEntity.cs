@@ -17,6 +17,6 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
         public abstract bool acceptTank(MovingObject tank);
         //  public abstract bool acceptTower(ShootingObject tower);
 
-        public abstract void OnTouch(CCTouch touch);
+     //   public abstract void OnTouch(CCTouch touch, Map map);
     }
 }

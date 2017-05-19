@@ -10,20 +10,8 @@ using System.Text;
 
 namespace CCTowerDefense.Game
 {
-    class Map : CCNode
+    public class Map : CCNode 
     {
-        static Lazy<Map> self = new Lazy<Map>(() => new Map());
-
-        // simple singleton implementation
-        public static Map Self
-        {
-            get
-            {
-                return self.Value;
-            }
-        }
-
-
 
         public int Cols { get; private set; }
         public int Rows { get; private set; }
@@ -32,7 +20,7 @@ namespace CCTowerDefense.Game
         private List<MovingObject> tanks;
         private List<ShootingObject> towers;
 
-        private Map()
+        public Map()
         {
             tanks = new List<MovingObject>();
             towers = new List<ShootingObject>();
@@ -47,8 +35,6 @@ namespace CCTowerDefense.Game
 
         }
 
-
-
         protected override void AddedToScene()
         {
             base.AddedToScene();
@@ -61,8 +47,6 @@ namespace CCTowerDefense.Game
 
         public MapEntity Get(int i, int j)
         {
-            //if (i == Cols || j == Rows)
-            //return new ExitField(i, j);
             if (i >= Cols || j >= Rows || i < 0 || j < 0)
                 return new ExitField(i, j);
             return gameMap[i, j];
@@ -84,33 +68,17 @@ namespace CCTowerDefense.Game
 
         }
 
-        public void OnTouch(CCTouch touch)
-        {
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Cols; j++)
-                {
-                    if (gameMap[j, i].BoundingBox.ContainsPoint(new CCPoint(touch.Location.X, touch.Location.Y - 150f)))
-                    {
-                        gameMap[j, i].OnTouch(touch);
-                        Debug.WriteLine($"x: {j}, y: {i}");
-                    }
-                }
-            }
-        }
-
         private void InitializeMap()
         {
 
-            var mapText = CCFileUtils.GetFileData(filename: "map.txt");
-
+            string mapText = CCFileUtils.GetFileData(filename: "map.txt");
+#if __IOS__
+            string[] stringSeparators = new string[] { "\n" };
+#else
             string[] stringSeparators = new string[] { "\r\n" };
+#endif
             string[] lines = mapText.Split(stringSeparators, StringSplitOptions.None);
-          //  var lines = mapText.Split('\r\n');
-
-
-            var dimension = lines[0].Split(' ');
-
+            string[] dimension = lines[0].Split(' ');
 
             Cols = int.Parse(dimension[0]);
             Rows = int.Parse(dimension[1]);
@@ -127,7 +95,7 @@ namespace CCTowerDefense.Game
                             gameMap[j, i - 2] = new Wall(j, i - 2);
                             break;
                         case "I":
-                            gameMap[j, i - 2] = new EntryField(j, i - 2);
+                            gameMap[j, i - 2] = new EntryField(j, i - 2, this);
                             break;
                         case "F":
                             gameMap[j, i - 2] = new Field(j, i - 2);
@@ -141,37 +109,7 @@ namespace CCTowerDefense.Game
 
                 }
             }
-            /*
-            gameMap[0, 0] = new Wall(0, 0);
-            gameMap[0, 1] = new EntryField(0, 1);
-            gameMap[0, 2] = new Wall(0, 2);
-            gameMap[0, 3] = new Wall(0, 3);
-            gameMap[0, 4] = new Wall(0, 4);
-
-            gameMap[1, 0] = new Wall(1, 0);
-            gameMap[1, 1] = new Field(1, 1);
-            gameMap[1, 2] = new Field(1, 2);
-            gameMap[1, 3] = new Field(1, 3);
-            gameMap[1, 4] = new Wall(1, 4);
-
-            gameMap[2, 0] = new Wall(2, 0);
-            gameMap[2, 1] = new Wall(2, 1);
-            gameMap[2, 2] = new Wall(2, 2);
-            gameMap[2, 3] = new Field(2, 3);
-            gameMap[2, 4] = new Wall(2, 4);
-
-            gameMap[3, 0] = new Wall(3, 0);
-            gameMap[3, 1] = new Field(3, 1);
-            gameMap[3, 2] = new Field(3, 2);
-            gameMap[3, 3] = new Field(3, 3);
-            gameMap[3, 4] = new Wall(3, 4);
-
-            gameMap[4, 0] = new Wall(4, 0);
-            gameMap[4, 1] = new ExitField(4, 1);
-            gameMap[4, 2] = new Wall(4, 2);
-            gameMap[4, 3] = new Wall(4, 3);
-            gameMap[4, 4] = new Wall(4, 4);*/
-
+        
             for (int i = 0; i < Rows; i++)
             {
                 for (int j = 0; j < Cols; j++)

@@ -7,8 +7,10 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
 {
     public class EntryField : Field
     {
-        public EntryField(int x, int y) : base(x, y)
+        Map map;
+        public EntryField(int x, int y, Map map) : base(x, y)
         {
+            this.map = map;
             sprite = new CocosSharp.CCSprite("infield.png");
 
             Schedule(createTank, interval: 3f);
@@ -18,7 +20,7 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
 
         public void createTank(float unusedVariable)
         {
-            GameEventHandler.Self.CreateTank(x, y, DefaultDir);
+            GameEventHandler.Self.CreateTank(x, y, DefaultDir, map);
         }
     }
 }

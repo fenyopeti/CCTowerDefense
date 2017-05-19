@@ -9,12 +9,14 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
     {
         public Direction Dir { get; set; }
         protected int health;
-        internal bool isDead = false;
-
+        public bool isDead { get; private set; } = false;
+        private Map map;
+        protected float velocity = 70f;
         public int Value { get; protected set; }
 
-        public MovingObject(int x, int y) : base(x, y)
+        public MovingObject(int x, int y, Map map) : base(x, y)
         {
+            this.map = map;
             this.Schedule(move);
 
         }
@@ -22,7 +24,7 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
 
         public void move(float t)
         {
-            float velocity = 70;
+            
             t *= velocity;
 
             switch (Dir)
@@ -30,13 +32,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                 case Direction.UP:
                     this.PositionY += t;
 
-                    if (this.BoundingBox.IntersectsRect(Map.Self.Get(x, y + 1).BoundingBox))
+                    if (this.BoundingBox.IntersectsRect(map.Get(x, y + 1).BoundingBox))
                     {
-                        if (Map.Self.Get(x, y + 1).acceptTank(this))
+                        if (map.Get(x, y + 1).acceptTank(this))
                         {
                             y = y + 1;
                         }
-                        else if (Map.Self.Get(x + 1, y).acceptTank(this))
+                        else if (map.Get(x + 1, y).acceptTank(this))
                         {
                             x = x + 1;
                             Dir = Direction.RIGHT;
@@ -53,13 +55,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                     break;
                 case Direction.RIGHT:
                     this.PositionX += t;
-                    if (this.BoundingBox.IntersectsRect(Map.Self.Get(x + 1, y).BoundingBox))
+                    if (this.BoundingBox.IntersectsRect(map.Get(x + 1, y).BoundingBox))
                     {
-                        if (Map.Self.Get(x + 1, y).acceptTank(this))
+                        if (map.Get(x + 1, y).acceptTank(this))
                         {
                             x = x + 1;
                         }
-                        else if (Map.Self.Get(x, y + 1).acceptTank(this))
+                        else if (map.Get(x, y + 1).acceptTank(this))
                         {
                             y = y + 1;
                             Dir = Direction.UP;
@@ -78,13 +80,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                     break;
                 case Direction.DOWN:
                     this.PositionY -= t;
-                    if (this.BoundingBox.IntersectsRect(Map.Self.Get(x, y - 1).BoundingBox))
+                    if (this.BoundingBox.IntersectsRect(map.Get(x, y - 1).BoundingBox))
                     {
-                        if (Map.Self.Get(x, y - 1).acceptTank(this))
+                        if (map.Get(x, y - 1).acceptTank(this))
                         {
                             y = y - 1;
                         }
-                        else if (Map.Self.Get(x + 1, y).acceptTank(this))
+                        else if (map.Get(x + 1, y).acceptTank(this))
                         {
                             x = x + 1;
                             sprite.Rotation = 90f;
@@ -101,13 +103,13 @@ namespace CCTowerDefense.Game.GameObjects.MovingObjects
                     break;
                 case Direction.LEFT:
                     this.PositionX -= t;
-                    if (this.BoundingBox.IntersectsRect(Map.Self.Get(x - 1, y).BoundingBox))
+                    if (this.BoundingBox.IntersectsRect(map.Get(x - 1, y).BoundingBox))
                     {
-                        if (Map.Self.Get(x - 1, y).acceptTank(this))
+                        if (map.Get(x - 1, y).acceptTank(this))
                         {
                             x = x - 1;
                         }
-                        else if (Map.Self.Get(x, y + 1).acceptTank(this))
+                        else if (map.Get(x, y + 1).acceptTank(this))
                         {
                             y = y + 1;
                             sprite.Rotation = 0f;

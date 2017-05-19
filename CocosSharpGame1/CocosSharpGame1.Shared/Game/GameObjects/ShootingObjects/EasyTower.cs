@@ -7,7 +7,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
 {
     class EasyTower : ShootingObject
     {
-        public EasyTower(int x, int y) : base(x, y)
+        public EasyTower(int x, int y, Map map) : base(x, y, map)
         {
             sprite = new CCSprite("etower.png");
             Value = 60;

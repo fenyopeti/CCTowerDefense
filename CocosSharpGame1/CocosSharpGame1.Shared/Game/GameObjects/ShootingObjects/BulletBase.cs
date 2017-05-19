@@ -50,7 +50,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
 
             Rotation = -normVekt.Angle * 57f + 90f;
 
-            if (this.BoundingBox.IntersectsRect(new CCRect(target.Position.X, target.Position.Y, 10f, 10f)))
+            if (this.BoundingBox.IntersectsRect(new CCRect(target.Position.X, target.Position.Y, 5f, 5f)))
             {
                 target.getShot(power);
                 RemoveFromParent();

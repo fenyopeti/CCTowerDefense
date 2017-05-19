@@ -21,7 +21,7 @@ namespace CCTowerDefense.Game.GameObjects
         {
             base.AddedToScene();
 
-            var Size = 768f / Map.Self.Cols;
+            var Size = 768f / 7;// Map.Self.Cols;
 
             ContentSize = sprite.ContentSize = new CCSize(Size, Size);
 

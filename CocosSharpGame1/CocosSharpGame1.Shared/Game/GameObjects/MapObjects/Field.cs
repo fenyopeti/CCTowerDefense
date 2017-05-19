@@ -19,10 +19,10 @@ namespace CCTowerDefense.Game.GameObjects.MapObjects
             return true;
         }
 
-        public override void OnTouch(CCTouch touch)
-        {
+      //  public override void OnTouch(CCTouch touch, Map map)
+      //  {
 
-        }
+    //    }
 
     }
 }
