@@ -11,7 +11,7 @@ namespace CCTowerDefense.Game.GameObjects.ShootingObjects
         {
             sprite = new CCSprite("etower.png");
             Value = 60;
-            power = 30;
+            power = 50;
             range = 300f;
         }
     }

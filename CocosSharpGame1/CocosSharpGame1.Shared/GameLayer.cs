@@ -39,14 +39,13 @@ namespace CocosSharpGame1.Shared
             GameEventHandler.Self.GameIsOver += HandleGameOver;
         }
 
-        private void HandleGameOver() //asdfasdf
+        private void HandleGameOver() 
         {
 
             Window.DefaultDirector.ReplaceScene(MainLayer.GameScene(Window));
             backgroungMusic.Stop();
             this.RemoveFromParent();
-     //       map.Dispose();
-          //  this.RemoveFromParent();
+
         }
         private void HandleLabelChanged(MovingObject obj)
         {
